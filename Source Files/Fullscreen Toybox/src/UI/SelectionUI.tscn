@@ -1,0 +1,79 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/UI/SelectionUI.gd" type="Script" id=1]
+
+[node name="SelectionUI" type="Control"]
+margin_right = 1920.0
+margin_bottom = 1080.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="PanelContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -53.0
+margin_top = -56.0
+margin_right = 53.0
+margin_bottom = 56.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VSplitContainer" type="VBoxContainer" parent="Panel"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 99.0
+margin_bottom = 135.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="NameLabel" type="Label" parent="Panel/VSplitContainer"]
+margin_right = 92.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "Screen Toybox"
+align = 1
+
+[node name="VersionLabel" type="Label" parent="Panel/VSplitContainer"]
+margin_top = 18.0
+margin_right = 92.0
+margin_bottom = 32.0
+mouse_default_cursor_shape = 16
+text = "v 0.4.1"
+align = 1
+
+[node name="BubblesButton" type="Button" parent="Panel/VSplitContainer"]
+margin_top = 36.0
+margin_right = 92.0
+margin_bottom = 56.0
+text = "Bubbles"
+
+[node name="StarButton" type="Button" parent="Panel/VSplitContainer"]
+margin_top = 60.0
+margin_right = 92.0
+margin_bottom = 80.0
+text = "Starfield"
+
+[node name="ShapesButton" type="Button" parent="Panel/VSplitContainer"]
+margin_top = 84.0
+margin_right = 92.0
+margin_bottom = 104.0
+text = "Physics"
+
+[node name="QuitButton" type="Button" parent="Panel/VSplitContainer"]
+margin_top = 108.0
+margin_right = 92.0
+margin_bottom = 128.0
+text = "Esc to Quit"
+[connection signal="pressed" from="Panel/VSplitContainer/BubblesButton" to="." method="_on_BubblesButton_pressed"]
+[connection signal="pressed" from="Panel/VSplitContainer/StarButton" to="." method="_on_StarButton_pressed"]
+[connection signal="pressed" from="Panel/VSplitContainer/ShapesButton" to="." method="_on_ShapesButton_pressed"]
+[connection signal="pressed" from="Panel/VSplitContainer/QuitButton" to="." method="_on_QuitButton_pressed"]

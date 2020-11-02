@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://src/RigidBody2D.gd" type="Script" id=1]
+[ext_resource path="res://Assets/CircleBall.png" type="Texture" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 16.4119
+
+[sub_resource type="OccluderPolygon2D" id=2]
+cull_mode = 1
+polygon = PoolVector2Array( -11.9518, -11.2229, -4.23902, -15.0793, 3.4738, -14.8589, 8.32186, -13.5367, 14.6023, -7.1461, 15.4838, 4.75368, 10.7459, 11.8054, 4.46545, 16.3229, -5.78158, 15.8822, -10.4093, 13.1276, -14.0453, 8.72027, -16.249, 1.55837, -15.037, -6.92573 )
+
+[node name="MovingBall" type="RigidBody2D" groups=[
+"Persist",
+]]
+position = Vector2( 3.05176e-05, 2.21613 )
+input_pickable = true
+script = ExtResource( 1 )
+
+[node name="BoxColl" type="CollisionShape2D" parent="."]
+position = Vector2( -0.134552, 0.319885 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource( 2 )

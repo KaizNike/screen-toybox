@@ -1,0 +1,117 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://Assets/Adventurer Sprite Sheet v1.1.png" type="Texture" id=1]
+[ext_resource path="res://src/Bodies/Characters/Player/elthenGuy.gd" type="Script" id=2]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 3.85214
+height = 12.1812
+
+[sub_resource type="Animation" id=2]
+resource_name = "idle-looking"
+length = 3.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0, 12 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "idle-still"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "run"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 13, 20 ]
+}
+
+[sub_resource type="AnimationNodeAnimation" id=5]
+animation = "idle-looking"
+
+[sub_resource type="AnimationNodeAnimation" id=6]
+animation = "idle-still"
+
+[sub_resource type="AnimationNodeAnimation" id=7]
+animation = "run"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=8]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=9]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=10]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=11]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=12]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=13]
+
+[sub_resource type="AnimationNodeStateMachine" id=14]
+states/idle-looking/node = SubResource( 5 )
+states/idle-looking/position = Vector2( 739, 96 )
+states/idle-still/node = SubResource( 6 )
+states/idle-still/position = Vector2( 564, 85 )
+states/run/node = SubResource( 7 )
+states/run/position = Vector2( 649, -35 )
+transitions = [ "idle-still", "idle-looking", SubResource( 8 ), "idle-looking", "idle-still", SubResource( 9 ), "idle-looking", "run", SubResource( 10 ), "idle-still", "run", SubResource( 11 ), "run", "idle-still", SubResource( 12 ), "run", "idle-looking", SubResource( 13 ) ]
+start_node = "idle-still"
+graph_offset = Vector2( -2, -75 )
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=15]
+
+[node name="elthenGuy" type="RigidBody2D" groups=[
+"Persist",
+]]
+input_pickable = true
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+offset = Vector2( 2, -6 )
+vframes = 8
+hframes = 13
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/idle-looking = SubResource( 2 )
+anims/idle-still = SubResource( 3 )
+anims/run = SubResource( 4 )
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 14 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 15 )

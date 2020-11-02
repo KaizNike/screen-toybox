@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://src/RigidBody2D.gd" type="Script" id=1]
+[ext_resource path="res://Assets/CircleBallLight.png" type="Texture" id=2]
+[ext_resource path="res://Assets/light_texture.png" type="Texture" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 16.4119
+
+[node name="MovingBall" type="RigidBody2D" groups=[
+"Persist",
+]]
+position = Vector2( 3.05176e-05, 2.21613 )
+input_pickable = true
+script = ExtResource( 1 )
+
+[node name="BoxColl" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( -0.134552, 0.319885 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+modulate = Color( 0.858824, 0.898039, 0.188235, 1 )
+texture = ExtResource( 2 )
+
+[node name="Light2D" type="Light2D" parent="."]
+position = Vector2( -0.774841, 0.968555 )
+texture = ExtResource( 3 )
+texture_scale = 5.0
+energy = 3.18
+shadow_enabled = true

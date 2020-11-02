@@ -1,0 +1,7 @@
+VERSION LOG
+v 0.0.0: Started, messed around with Per-Pixel Transparency
+v 0.1.0: Physics Update
+v 0.2.0: Bubbles Update
+v 0.3.0: Starfield Update
+v 0.4.0: Selection Update - Ready for launch!
+v 0.4.1: Many Dudes - Added plus function to shapes scene
