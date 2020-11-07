@@ -1,1 +1,10 @@
-Hello
+Controls:
+
+​Key	​Function	
+​Escape	Quit Game/Return to Main Menu​
+Arrows	Move selection in Menu
+Plus/Minus	Add or remove spawning objects
+R Key	Randomize Bubble Color
+M Key	Change On Top Mode - So that you can see other windows on top
+Left Click	Pop Bubble
+Drag	Throw Physics Object

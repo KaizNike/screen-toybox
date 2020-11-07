@@ -47,7 +47,7 @@ margin_top = 18.0
 margin_right = 92.0
 margin_bottom = 32.0
 mouse_default_cursor_shape = 16
-text = "v 0.4.1"
+text = "v 0.4.5"
 align = 1
 
 [node name="BubblesButton" type="Button" parent="Panel/VSplitContainer"]

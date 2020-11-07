@@ -5,3 +5,7 @@ v 0.2.0: Bubbles Update
 v 0.3.0: Starfield Update
 v 0.4.0: Selection Update - Ready for launch!
 v 0.4.1: Many Dudes - Added plus function to shapes scene
+v 0.4.2: Added Multiple Resolution Support (In testing) - Does some funky things but better than before
+v 0.4.3: Release Prep stage 2 - A lot of fiddling was done to get the program running properly
+v 0.4.4: Sinewave Update - Now bubbles move more realistically! Next step would be adding currents and sea life.
+v 0.4.5: Bouncing Title Update - Just like the bouncing tv name!

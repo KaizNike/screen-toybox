@@ -4,6 +4,9 @@ var Float = 2
 var posXInitial
 var wave = 0.2
 var is_popped = false
+
+var time = 0
+var speed = 2.4
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -27,12 +30,24 @@ func _ready():
 #	pass
 
 func _physics_process(delta):
-	position.x += wave
-	position.y -= Float
-	if (position.x - posXInitial) > 20:
-		wave *= -1
-	if (position.x - posXInitial) < -20:
-		wave *= -1
+	time += delta
+
+	var freq = 1
+	var amplitude = 1.2
+
+	var v = Vector2(0, (-1 * speed))
+
+	v.x = cos(time*freq)*amplitude
+	position.x += v.x
+	position.y += v.y
+	
+#	position.x += wave
+#	position.y -= Float
+#	if (position.x - posXInitial) > 20:
+#		wave *= -1
+#	if (position.x - posXInitial) < -20:
+#		wave *= -1
+	pass
 	
 
 func _input_event(viewport, event, shape_idx):

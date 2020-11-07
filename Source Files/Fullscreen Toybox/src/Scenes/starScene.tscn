@@ -25,7 +25,21 @@ hue_variation_random = 1.0
 [node name="starScene" type="Node"]
 script = ExtResource( 1 )
 
-[node name="StarParticles" type="Particles2D" parent="."]
+[node name="Control" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StarParticles" type="Particles2D" parent="Control/MarginContainer"]
 position = Vector2( 962.381, 499.322 )
 amount = 50
 lifetime = 12.0
