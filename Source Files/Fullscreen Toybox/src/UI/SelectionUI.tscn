@@ -46,8 +46,10 @@ align = 1
 margin_top = 18.0
 margin_right = 92.0
 margin_bottom = 32.0
+hint_tooltip = "Now with clamps for resistance!"
+mouse_filter = 1
 mouse_default_cursor_shape = 16
-text = "v 0.4.5"
+text = "v 0.5"
 align = 1
 
 [node name="BubblesButton" type="Button" parent="Panel/VSplitContainer"]
@@ -73,6 +75,7 @@ margin_top = 108.0
 margin_right = 92.0
 margin_bottom = 128.0
 text = "Esc to Quit"
+
 [connection signal="pressed" from="Panel/VSplitContainer/BubblesButton" to="." method="_on_BubblesButton_pressed"]
 [connection signal="pressed" from="Panel/VSplitContainer/StarButton" to="." method="_on_StarButton_pressed"]
 [connection signal="pressed" from="Panel/VSplitContainer/ShapesButton" to="." method="_on_ShapesButton_pressed"]

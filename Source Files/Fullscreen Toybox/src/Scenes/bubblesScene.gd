@@ -42,6 +42,9 @@ func _input(event):
 #		#save()
 #		get_tree().quit()
 	if event.is_action_pressed("add"):
+		if $Timer.wait_time < 0.002:
+			return
+			print("full on bubbles")
 		$Timer.wait_time *= 0.95
 		print($Timer.wait_time)
 	if event.is_action_pressed("subtract"):

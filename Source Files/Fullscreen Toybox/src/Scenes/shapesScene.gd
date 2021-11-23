@@ -1,5 +1,6 @@
 extends Node
 
+var dudes = 0
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -16,11 +17,18 @@ func _ready():
 #func _process(delta):
 #	pass
 
-#func _input(event):
-#	if Input.is_action_just_pressed("ui_cancel"):
-#		print("Escaped program.")
-#		#save()
-#		get_tree().quit()
+func _input(event):
+	if event.is_action_pressed("add"):
+		if dudes >= 32:
+			print("end")
+			return
+		dudes += 1
+		print(dudes)
+		var GuyScene = load("res://src/Bodies/Characters/Player/elthenGuy.tscn")
+		print("NEWGUY")
+		var newGuy = GuyScene.instance()
+		newGuy.position = Vector2((OS.window_size.x / 2), (OS.window_size.y / 2))
+		get_parent().add_child(newGuy)
 
 
 func save():

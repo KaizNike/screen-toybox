@@ -20,6 +20,9 @@ func _ready():
 
 func _input(event):
 	if event.is_action_pressed("add"):
+		if $Control/MarginContainer/StarParticles.amount > 700000:
+			print("All full on stars!")
+			return
 		$Control/MarginContainer/StarParticles.amount *= 1.2
 		print("More stars!")
 		print($Control/MarginContainer/StarParticles.amount)
