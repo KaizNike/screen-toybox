@@ -3,6 +3,7 @@ var dir = Vector2()
 var speed = 15
 
 func _ready():
+	get_tree().get_root().connect("size_changed",self,"reset_pos")
 	randomize()
 	dir = Vector2(rand_range(-1, 1), rand_range(-1,1))
 
@@ -31,3 +32,7 @@ func _invert_dir(var direction):
 
 func _randomize_colors():
 	self.modulate = Color(rand_range(0, 1), rand_range(0, 1), rand_range(0, 1))
+	
+func reset_pos():
+	rect_position.x = OS.window_size.x / 2
+	rect_position.y = OS.window_size.y / 2
