@@ -1,6 +1,6 @@
 extends Node
 
-export (PackedScene) onready var bubbleScene
+@export var bubbleScene : PackedScene
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -12,6 +12,8 @@ var randomizeColors = false
 func _ready():
 	randomize()
 	get_tree().get_root().set_transparent_background(true)
+	%Camera2D.custom_viewport = %SubViewport
+	%Camera2D.enabled = true
 	pass # Replace with function body.
 
 
@@ -21,10 +23,10 @@ func _ready():
 
 
 func _on_Timer_timeout():
-	var bubble_instance = bubbleScene.instance()
-	var X = rand_range(0, OS.window_size.x)
-	var Y = OS.window_size.y
-	var sizeXY = rand_range(0.3, 3.5)
+	var bubble_instance = bubbleScene.instantiate()
+	var X = randf_range(0 - DisplayServer.screen_get_size(1).x, get_window().size.x)
+	var Y = get_window().size.y
+	var sizeXY = randf_range(0.3, 3.5)
 #	var sizeX = rand_range(0.5, 3)
 #	var sizeY = rand_range(0.5, 3)
 	bubble_instance.scale.x = sizeXY
@@ -32,7 +34,7 @@ func _on_Timer_timeout():
 	bubble_instance.position = Vector2(X, Y)
 	if randomizeColors:
 #		print("make random")
-		bubble_instance.modulate = Color(rand_range(0, 1), rand_range(0, 1), rand_range(0, 1))
+		bubble_instance.modulate = Color(randf_range(0, 1), randf_range(0, 1), randf_range(0, 1))
 	$SpawnedBubbles.add_child(bubble_instance)
 	pass # Replace with function body.
 	

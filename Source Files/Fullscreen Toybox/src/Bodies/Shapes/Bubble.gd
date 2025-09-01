@@ -50,16 +50,25 @@ func _physics_process(delta):
 	pass
 	
 
+func _unhandled_input(event: InputEvent) -> void:
+	if not is_popped:
+		if event is InputEventMouseMotion and AutoKing.MegaPopping:
+			popped()
+		if event is InputEventMouseButton and AutoKing.MegaPopping:
+			popped()
+
 func _input_event(viewport, event, shape_idx):
 	if not is_popped:
+		if event is InputEventMouseButton:
+			popped()
 		if event.is_action_pressed("click"):
 #			$AnimationPlayer.play("pop")
 #			AutoKing.NumPopped += 1
 			popped()
-		if event is InputEventMouseMotion and AutoKing.MegaPopping:
-#			$AnimationPlayer.play("pop")
-#			AutoKing.NumPopped += 1
-			popped()
+		#if event is InputEventMouseMotion and AutoKing.MegaPopping:
+##			$AnimationPlayer.play("pop")
+##			AutoKing.NumPopped += 1
+			#popped()
 
 
 func _on_Timer_timeout():

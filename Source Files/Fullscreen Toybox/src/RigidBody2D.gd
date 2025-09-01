@@ -7,7 +7,7 @@ extends RigidBody2D
 
 var drag_enabled = false
 
-export var speed = 75
+@export var speed = 75
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -35,7 +35,7 @@ func _input(event):
 		dragging = false
 		var drag_end = get_global_mouse_position()
 		var dir = drag_start - drag_end
-		apply_impulse(Vector2(), -dir * 1)
+		apply_impulse(-dir * 1, Vector2())
 		
 func _input_event(viewport, event, shape_idx):
 #	if event is InputEventMouseButton:

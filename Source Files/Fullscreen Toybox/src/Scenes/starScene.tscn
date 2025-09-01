@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://src/Scenes/starScene.gd" type="Script" id=1]
-[ext_resource path="res://Assets/starWhite.png" type="Texture" id=2]
+[ext_resource path="res://Assets/starWhite.png" type="Texture2D" id=2]
 
 [sub_resource type="Curve" id=1]
 _data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
@@ -9,7 +9,7 @@ _data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
 [sub_resource type="CurveTexture" id=2]
 curve = SubResource( 1 )
 
-[sub_resource type="ParticlesMaterial" id=3]
+[sub_resource type="ParticleProcessMaterial" id=3]
 flag_disable_z = true
 spread = 180.0
 gravity = Vector3( 0, 0, 0 )
@@ -39,7 +39,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="StarParticles" type="Particles2D" parent="Control/MarginContainer"]
+[node name="StarParticles" type="GPUParticles2D" parent="Control/MarginContainer"]
 position = Vector2( 962.381, 499.322 )
 amount = 50
 lifetime = 12.0

@@ -5,3 +5,5 @@ v 0.2.0: Bubbles Update
 v 0.3.0: Starfield Update
 v 0.4.0: Selection Update - Ready for launch! - Started Version Log
 v 0.4.1: Many Dudes - Added plus function to shapes scene
+v 0.5.0: Clamps
+v 0.6.0: Multimonitor support for Selection and Bubbles, Switch to Godot 4 (8/31/2025)

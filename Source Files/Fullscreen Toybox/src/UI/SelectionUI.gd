@@ -19,19 +19,19 @@ func button_pressed():
 
 func _on_BubblesButton_pressed():
 	button_pressed()
-	get_tree().change_scene("res://src/Scenes/bubblesScene.tscn")
+	get_tree().change_scene_to_file("res://src/Scenes/bubblesScene.tscn")
 	pass # Replace with function body.
 
 
 func _on_StarButton_pressed():
 	button_pressed()
-	get_tree().change_scene("res://src/Scenes/starScene.tscn")
+	get_tree().change_scene_to_file("res://src/Scenes/starScene.tscn")
 	pass # Replace with function body.
 
 
 func _on_ShapesButton_pressed():
 	button_pressed()
-	get_tree().change_scene("res://src/Scenes/shapesScene.tscn")
+	get_tree().change_scene_to_file("res://src/Scenes/shapesScene.tscn")
 	pass # Replace with function body.
 
 

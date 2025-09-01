@@ -34,8 +34,8 @@ shader_param/black_radius = 0.65
 
 [node name="ColorRect" type="ColorRect"]
 material = SubResource( 2 )
-margin_right = 240.0
-margin_bottom = 204.0
+offset_right = 240.0
+offset_bottom = 204.0
 __meta__ = {
 "_edit_use_anchors_": false
 }

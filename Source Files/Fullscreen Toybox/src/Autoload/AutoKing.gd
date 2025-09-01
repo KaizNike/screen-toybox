@@ -28,12 +28,12 @@ func _input(event):
 			get_tree().quit()
 		else:
 #			save()
-			get_tree().change_scene("res://src/Scenes/selectionScene.tscn")
+			get_tree().change_scene_to_file("res://src/Scenes/selectionScene.tscn")
 	if Input.is_action_just_pressed("mode"):
 		if onTop:
 			print("Changed mode to false.")
 			onTop = false
-			OS.set_window_always_on_top(false)
+			get_window().always_on_top = (false)
 #			ProjectSettings.set_setting("display/window/size/always_on_top", false)
 #			ProjectSettings.save()
 #			print(ProjectSettings.get_setting("display/window/size/always_on_top"))
@@ -41,7 +41,7 @@ func _input(event):
 		else:
 			print("Changed mode to true.")
 			onTop = true
-			OS.set_window_always_on_top(true)
+			get_window().always_on_top = (true)
 #			ProjectSettings.set_setting("display/window/size/always_on_top", true)
 #			ProjectSettings.save()
 #			get_tree().reload_current_scene()

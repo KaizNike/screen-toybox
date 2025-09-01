@@ -1,36 +1,88 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=3 uid="uid://de6xlx1yd030f"]
 
-[ext_resource path="res://src/UI/SelectionUI.tscn" type="PackedScene" id=1]
-[ext_resource path="res://src/Scenes/selectionScene.gd" type="Script" id=2]
-[ext_resource path="res://Assets/Fonts/planetbe.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://src/Scenes/BouncingGameName.gd" type="Script" id=4]
+[ext_resource type="PackedScene" uid="uid://bg40pn2wp2i02" path="res://src/UI/SelectionUI.tscn" id="1"]
+[ext_resource type="Script" uid="uid://da5kxvgrpxtqd" path="res://src/Scenes/selectionScene.gd" id="2"]
+[ext_resource type="FontFile" uid="uid://dsaeqqrsyjwhy" path="res://Assets/Fonts/planetbe.ttf" id="3"]
+[ext_resource type="Script" uid="uid://8bmrxde153cf" path="res://src/Scenes/BouncingGameName.gd" id="4"]
+[ext_resource type="Script" uid="uid://lgf27fgotoaa" path="res://src/Scenes/camera_2d.gd" id="5_q5u4e"]
+[ext_resource type="Script" uid="uid://bsrptb5lhq788" path="res://src/Scenes/sub_viewport.gd" id="6_lxs7n"]
+[ext_resource type="Script" uid="uid://orki205s5le5" path="res://src/Scenes/node_2d.gd" id="7_mj5vh"]
 
-[sub_resource type="DynamicFont" id=1]
-size = 28
-outline_size = 3
-font_data = ExtResource( 3 )
+[sub_resource type="FontFile" id="1"]
+fallbacks = Array[Font]([ExtResource("3")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
 
 [node name="selectionScene" type="Node"]
-script = ExtResource( 2 )
+script = ExtResource("2")
+
+[node name="Camera2D2" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(-1927, 0)
+script = ExtResource("7_mj5vh")
+
+[node name="Camera2D" type="Camera2D" parent="Node2D"]
+unique_name_in_owner = true
+anchor_mode = 0
+enabled = false
+script = ExtResource("5_q5u4e")
 
 [node name="BouncingGameName" type="Label" parent="."]
+anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -61.5
-margin_top = -163.818
-margin_right = 61.5
-margin_bottom = -72.818
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_color_shadow = Color( 0.956863, 0.905882, 0.905882, 1 )
+offset_left = -61.5
+offset_top = -163.818
+offset_right = 61.5
+offset_bottom = -72.818
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.956863, 0.905882, 0.905882, 1)
+theme_override_fonts/font = SubResource("1")
 text = "Screen
 Toybox"
-align = 1
-script = ExtResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+horizontal_alignment = 1
+script = ExtResource("4")
 
-[node name="SelectionUI" parent="." instance=ExtResource( 1 )]
+[node name="SelectionUI" parent="." instance=ExtResource("1")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+
+[node name="Window" type="Window" parent="."]
+unique_name_in_owner = true
+auto_translate_mode = 1
+transparent_bg = true
+mode = 3
+initial_position = 3
+size = Vector2i(1920, 1080)
+current_screen = 0
+always_on_top = true
+transparent = true
+mouse_passthrough = true
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Window"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="Window/SubViewportContainer"]
+unique_name_in_owner = true
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(1920, 1080)
+render_target_update_mode = 4
+script = ExtResource("6_lxs7n")

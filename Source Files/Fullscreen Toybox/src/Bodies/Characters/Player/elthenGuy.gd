@@ -4,7 +4,7 @@ extends RigidBody2D
 
 var drag_enabled = false
 var dudes = 0
-export var speed = 75
+@export var speed = 75
 
 #export (PackedScene) onready var GuyScene
 
@@ -34,7 +34,7 @@ func _input(event):
 		dragging = false
 		var drag_end = get_global_mouse_position()
 		var dir = drag_start - drag_end
-		apply_impulse(Vector2(), -dir * 1)
+		apply_impulse(-dir * 1, Vector2())
 		
 func _input_event(viewport, event, shape_idx):
 #	if event is InputEventMouseButton:
