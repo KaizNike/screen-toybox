@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://de6xlx1yd030f"]
+[gd_scene load_steps=12 format=3 uid="uid://de6xlx1yd030f"]
 
 [ext_resource type="PackedScene" uid="uid://bg40pn2wp2i02" path="res://src/UI/SelectionUI.tscn" id="1"]
 [ext_resource type="Script" uid="uid://da5kxvgrpxtqd" path="res://src/Scenes/selectionScene.gd" id="2"]
@@ -8,6 +8,8 @@
 [ext_resource type="Script" uid="uid://bsrptb5lhq788" path="res://src/Scenes/sub_viewport.gd" id="6_lxs7n"]
 [ext_resource type="Script" uid="uid://dvwr2x85rf5g2" path="res://src/Scenes/window.gd" id="7_grhwu"]
 [ext_resource type="Script" uid="uid://orki205s5le5" path="res://src/Scenes/node_2d.gd" id="7_mj5vh"]
+[ext_resource type="Texture2D" uid="uid://bxnjm3jxtxkrj" path="res://Assets/toyboxIcon.png" id="9_56cm4"]
+[ext_resource type="Script" uid="uid://cyn1eeh3pr46h" path="res://src/Scenes/texture_rect.gd" id="10_ne61e"]
 
 [sub_resource type="FontFile" id="1"]
 fallbacks = Array[Font]([ExtResource("3")])
@@ -88,3 +90,18 @@ handle_input_locally = false
 size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 script = ExtResource("6_lxs7n")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_56cm4")
+script = ExtResource("10_ne61e")

@@ -12,6 +12,7 @@ config_version=5
 
 config/name="Screen Toybox"
 config/description="A fun way to mess around."
+config/version="0.6.1"
 run/main_scene="res://src/Scenes/selectionScene.tscn"
 config/features=PackedStringArray("4.4")
 config/icon="res://Assets/toyboxIcon.png"

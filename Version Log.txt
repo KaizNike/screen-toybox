@@ -8,3 +8,4 @@ v 0.4.1: Many Dudes - Added plus function to shapes scene
 v 0.5.0: Clamps
 v 0.6.0: Multimonitor support for Selection and Bubbles, Switch to Godot 4 (8/31/2025)
 v 0.6.1: Multimonitor support for stars, plus stars are wilder. Fixes. (9/1/2025)
+- Added icon to bounce around Selection.
