@@ -1,10 +1,10 @@
 [gd_scene load_steps=10 format=3 uid="uid://cy01hklc5kw0q"]
 
-[ext_resource type="PackedScene" path="res://src/Bodies/Shapes/MovingBox.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://c4owtmvo01btc" path="res://src/Bodies/Shapes/MovingBox.tscn" id="1"]
 [ext_resource type="PackedScene" uid="uid://bdvq0a60lhpft" path="res://src/Bodies/Characters/Player/elthenGuy.tscn" id="2"]
-[ext_resource type="PackedScene" path="res://src/Bodies/Shapes/MovingBallLight.tscn" id="3"]
-[ext_resource type="PackedScene" path="res://src/Bodies/Shapes/MovingBall.tscn" id="4"]
-[ext_resource type="PackedScene" path="res://src/Bodies/Shapes/MovingTriangle.tscn" id="5"]
+[ext_resource type="PackedScene" uid="uid://cc66xxd3tq5sd" path="res://src/Bodies/Shapes/MovingBallLight.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://cwvon1uqyeitc" path="res://src/Bodies/Shapes/MovingBall.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://ck7stavc44egs" path="res://src/Bodies/Shapes/MovingTriangle.tscn" id="5"]
 [ext_resource type="Script" uid="uid://dtc5sfbcqklwl" path="res://src/Scenes/shapesScene.gd" id="6"]
 
 [sub_resource type="RectangleShape2D" id="1"]

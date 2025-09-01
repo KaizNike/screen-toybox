@@ -1,17 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://syasbw7jdbo6"]
+[gd_scene load_steps=3 format=3 uid="uid://syasbw7jdbo6"]
 
+[ext_resource type="Script" uid="uid://dvwr2x85rf5g2" path="res://src/Scenes/window.gd" id="1_80qvw"]
 [ext_resource type="Script" uid="uid://bsrptb5lhq788" path="res://src/Scenes/sub_viewport.gd" id="1_lw2h8"]
 
 [node name="Window" type="Window"]
 auto_translate_mode = 1
 transparent_bg = true
+handle_input_locally = false
+audio_listener_enable_2d = true
 mode = 3
 initial_position = 3
 size = Vector2i(1920, 1080)
 current_screen = 0
 always_on_top = true
 transparent = true
-mouse_passthrough = true
+script = ExtResource("1_80qvw")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
 anchors_preset = 15
@@ -19,12 +22,17 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 0
 stretch = true
+mouse_target = true
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
 unique_name_in_owner = true
 transparent_bg = true
 handle_input_locally = false
-size = Vector2i(1920, 1080)
+audio_listener_enable_2d = true
+physics_object_picking = true
+physics_object_picking_sort = true
+physics_object_picking_first_only = true
 render_target_update_mode = 4
 script = ExtResource("1_lw2h8")

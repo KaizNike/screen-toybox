@@ -8,7 +8,10 @@ extends Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	AutoKing.currentScene = "stars"
 	get_tree().get_root().set_transparent_background(true)
+	%Camera2D.custom_viewport = %SubViewport
+	%Camera2D.enabled = true
 #	$StarParticles.position = Vector2((OS.window_size.x / 2), (OS.window_size.y /2))
 	pass # Replace with function body.
 

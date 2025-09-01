@@ -10,6 +10,7 @@ var randomizeColors = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	AutoKing.currentScene = "bubbles"
 	randomize()
 	get_tree().get_root().set_transparent_background(true)
 	%Camera2D.custom_viewport = %SubViewport
