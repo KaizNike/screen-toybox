@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://de6xlx1yd030f"]
+[gd_scene load_steps=10 format=3 uid="uid://de6xlx1yd030f"]
 
 [ext_resource type="PackedScene" uid="uid://bg40pn2wp2i02" path="res://src/UI/SelectionUI.tscn" id="1"]
 [ext_resource type="Script" uid="uid://da5kxvgrpxtqd" path="res://src/Scenes/selectionScene.gd" id="2"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://8bmrxde153cf" path="res://src/Scenes/BouncingGameName.gd" id="4"]
 [ext_resource type="Script" uid="uid://lgf27fgotoaa" path="res://src/Scenes/camera_2d.gd" id="5_q5u4e"]
 [ext_resource type="Script" uid="uid://bsrptb5lhq788" path="res://src/Scenes/sub_viewport.gd" id="6_lxs7n"]
+[ext_resource type="Script" uid="uid://dvwr2x85rf5g2" path="res://src/Scenes/window.gd" id="7_grhwu"]
 [ext_resource type="Script" uid="uid://orki205s5le5" path="res://src/Scenes/node_2d.gd" id="7_mj5vh"]
 
 [sub_resource type="FontFile" id="1"]
@@ -70,6 +71,7 @@ current_screen = 0
 always_on_top = true
 transparent = true
 mouse_passthrough = true
+script = ExtResource("7_grhwu")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="Window"]
 anchors_preset = 15
